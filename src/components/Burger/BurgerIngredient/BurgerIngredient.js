@@ -16,6 +16,9 @@ const burgerIngredient = props => {
 				</div>
 			);
 			break;
+		case 'meat':
+			ingredient = <div className={styles.Meat} />;
+			break;
 	}
 };
 
