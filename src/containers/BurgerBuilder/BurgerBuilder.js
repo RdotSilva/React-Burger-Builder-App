@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import { Signer } from 'crypto';
 
 const INGREDIENT_PRICES = {
 	salad: 0.5,
@@ -21,8 +22,23 @@ class BurgerBuilder extends Component {
 			cheese: 0,
 			meat: 0
 		},
-		totalPrice: 4
+		totalPrice: 4,
+		purchaseable: false
 	};
+
+	updatePurchaseState() {
+		const ingredients = {
+			...this.state.ingredients
+		};
+		const sum = Object.keys(ingredients)
+			.map(igKey => {
+				return ingredients[igKey];
+			})
+			.reduce((sum, el) => {
+				return sum + el;
+			}, 0);
+		this.setState({ purchaseable: sum > 0 });
+	}
 
 	addIngredientHandler = type => {
 		const oldCount = this.state.ingredients[type];
