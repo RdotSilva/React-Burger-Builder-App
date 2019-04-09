@@ -24,7 +24,7 @@ const buildControls = props => (
 			/>
 		))}
 
-		<button>ORDER NOW</button>
+		<button className={styles.OrderButton}>ORDER NOW</button>
 	</div>
 );
 
