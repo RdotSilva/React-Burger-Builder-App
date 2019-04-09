@@ -13,7 +13,7 @@ const orderSummary = props => {
 		<React.Fragment>
 			<h3>Your order</h3>
 			<p>A delicious burger with the following ingredients:</p>
-			<ul>{ingredientsSummary}</ul>
+			<ul>{ingredientSummary}</ul>
 			<p>Continue to Checkout?</p>
 		</React.Fragment>
 	);
