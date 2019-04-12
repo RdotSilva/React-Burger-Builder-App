@@ -8,7 +8,7 @@ const sideDrawer = props => {
 	//...
 	return (
 		<React.Fragment>
-			<Backdrop />
+			<Backdrop show />
 			<div className={styles.SideDrawer}>
 				<div className={styles.Logo}>
 					<Logo />
