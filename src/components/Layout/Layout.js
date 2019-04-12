@@ -16,7 +16,10 @@ class Layout extends Component {
 		return (
 			<React.Fragment>
 				<Toolbar />
-				<SideDrawer closed={this.sideDrawerClosedHandler} />
+				<SideDrawer
+					open={this.state.showSideDrawer}
+					closed={this.sideDrawerClosedHandler}
+				/>
 				<main className={styles.Content}>{this.props.children}</main>
 			</React.Fragment>
 		);
